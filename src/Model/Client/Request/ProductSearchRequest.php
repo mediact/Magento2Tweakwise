@@ -19,14 +19,10 @@ class ProductSearchRequest extends ProductNavigationRequest
     protected $path = 'navigation-search';
 
     /**
-     * Request constructor.
-     *
-     * @param Helper $helper
-     * @param StoreManager $storeManager
+     * Add visibility filters
      */
-    public function __construct(Helper $helper, StoreManager $storeManager)
+    protected function addVisibilityFilter()
     {
-        parent::__construct($helper, $storeManager);
         $this->addAttributeFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
         $this->addAttributeFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_IN_SEARCH);
     }

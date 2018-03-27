@@ -41,6 +41,14 @@ class ProductNavigationRequest extends Request
     public function __construct(Helper $helper, StoreManager $storeManager)
     {
         parent::__construct($helper, $storeManager);
+        $this->addVisibilityFilter();
+    }
+
+    /**
+     * Add visibility filters
+     */
+    protected function addVisibilityFilter()
+    {
         $this->addAttributeFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
         $this->addAttributeFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_IN_CATALOG);
     }
