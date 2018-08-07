@@ -23,8 +23,8 @@ class ProductSearchRequest extends ProductNavigationRequest
      */
     protected function addVisibilityFilter()
     {
-        $this->addAttributeFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
-        $this->addAttributeFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_IN_SEARCH);
+        $this->addAttributeFilter('visibility', 'Catalog, Search');
+        $this->addAttributeFilter('visibility', 'Search');
     }
 
     /**
