@@ -30,7 +30,7 @@ use Emico\Tweakwise\Block\LayeredNavigation\RenderLayered\DefaultRenderer;
 
                     <?php if ($block->shouldDisplayProductCountOnLayer()): ?>
                         <span class="count">
-                            <?=$item->getCount()?>
+                            <?=htmlentities($item->getCount())?>
                             <span class="filter-count-label">
                                 <?php if ($item->getCount() == 1):?>
                                     <?=__('item')?>

@@ -68,7 +68,8 @@ class Item extends MagentoItem
      */
     public function getLabel()
     {
-        return (string) $this->attributeType->getTitle();
+        $title = (string) $this->attributeType->getTitle();
+        return htmlentities($title);
     }
 
     /**

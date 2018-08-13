@@ -24,6 +24,9 @@
     <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
         <plugin name="emico-tweakwise" type="Emico\Tweakwise\Block\Catalog\Product\ProductList\Toolbar\Plugin" sortOrder="0" />
     </type>
+    <type name="Magento\Theme\Block\Html\Pager">
+        <plugin name="emico-tweakwise" type="Emico\Tweakwise\Block\Theme\Html\Pager\Plugin" sortOrder="0" />
+    </type>
     <type name="Magento\LayeredNavigation\Block\Navigation\FilterRenderer">
         <plugin name="emico-tweakwise" type="Emico\Tweakwise\Block\Navigation\FilterRenderer\Plugin" sortOrder="0" />
     </type>
@@ -105,10 +108,11 @@
         </arguments>
     </virtualType>
 
+    <preference for="Emico\Tweakwise\Model\Catalog\Layer\Url\UrlInterface" type="Emico\Tweakwise\Model\Catalog\Layer\Url\QueryParameters" />
     <type name="Emico\Tweakwise\Model\Catalog\Layer\Url">
         <arguments>
             <argument name="request" xsi:type="object">Magento\Framework\App\Request\Http</argument>
-            <argument name="implementation" xsi:type="object">Emico\Tweakwise\Model\Catalog\Layer\Url\QueryParameters</argument>
+            <argument name="implementation" xsi:type="object">Emico\Tweakwise\Model\Catalog\Layer\Url\UrlInterface</argument>
         </arguments>
     </type>
     <type name="Emico\Tweakwise\Model\Config\Source\FilterTemplate">

@@ -163,11 +163,6 @@ class Filter extends AbstractFilter implements FilterInterface
         return $this->items;
     }
 
-    public function getVisibleItems()
-    {
-
-    }
-
     /**
      * @param AttributeType $item
      * @return $this
@@ -240,7 +235,8 @@ class Filter extends AbstractFilter implements FilterInterface
      */
     public function getName()
     {
-        return $this->facet->getFacetSettings()->getTitle();
+        $title = (string) $this->facet->getFacetSettings()->getTitle();
+        return htmlentities($title);
     }
 
     /**
