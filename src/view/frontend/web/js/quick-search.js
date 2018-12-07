@@ -7,7 +7,7 @@
 
 define([
     'jquery',
-    'Magento_Search/form-mini'
+    'Magento_Search/js/form-mini'
 ], function($, quickSearch){
     $.widget('tweakwise.quickSearch', quickSearch, {
 
